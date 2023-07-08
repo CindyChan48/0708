@@ -3,7 +3,7 @@ import random
 min=1
 max=10
 target =random.randint(min,max)
-pinrt("猜猜看==========\n")
+print("猜猜看==========\n")
 
 while Ture:
     keyin=int(input(f"猜數字{min}~{max}:"))
