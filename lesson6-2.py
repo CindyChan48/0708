@@ -1,16 +1,25 @@
+#!/usr/bin/python3.10.2
+
 import random
 
-min=1
-max=10
-target =random.randint(min,max)
-print("猜猜看==========\n")
+min = 1
+max = 100
+count = 0
+target = random.randint(min, max)
+print("=============猜數字遊戲================\n\n")
 
-while Ture:
-    keyin=int(input(f"猜數字{min}~{max}:"))
+while True:
+    keyin = int(input(f"猜數字範圍{min}~{max}:"))
     count += 1
     if(keyin == target):
-        print(f"猜對嘞,答案是:{target}")
+        print(f"賓果!猜對了,答案是:{target}")
+        print(f"您共猜了幾{count}次")
         break
-    else:
-        print(f"你猜{count}次")
-print("game over")
+    elif keyin > target:        
+        print("再小一點")
+        max = keyin - 1        
+    elif  keyin < target:
+        print("再大一點")
+        min = keyin + 1
+    print(f"您已經猜了{count}次")
+print("遊戲結束")
